@@ -1,0 +1,59 @@
+# ==============================
+#   RegisterPlugin 설정 파일
+# ==============================
+
+# 회원가입 전 강퇴까지 대기 시간 (초 단위, 기본 300초 = 5분)
+kick-delay-seconds: 300
+
+# 이름 제한
+name:
+  min-length: 2       # 최소 글자 수
+  max-length: 16      # 최대 글자 수
+  # 사용 불가 문자 목록 (정규식)
+  forbidden-regex: "[^a-zA-Z0-9가-힣_]"
+
+# 타이틀 설정 (미등록 플레이어)
+title:
+  # 메인 타이틀
+  main: "§e§l/회원가입 §f<이름 입력>"
+  # 서브 타이틀
+  sub: "§c§l방치할 경우 §e§l5분 후 §c§l강퇴됩니다!"
+  # 페이드 in/stay/out (틱 단위, 20틱=1초)
+  fade-in: 20
+  stay: 200
+  fade-out: 20
+
+# 타이틀 반복 알림 간격 (초), 0이면 반복 안 함
+title-repeat-interval: 60
+
+# 강퇴 메시지
+kick-message: "§c§l[ 미등록 강퇴 ]\n\n§f회원가입을 하지 않아 서버에서 강퇴되었습니다.\n§7다시 접속 후 §e/회원가입 <이름>§7 을 입력해 주세요."
+
+# 채팅 포맷 (TAB 플러그인 없을 때 사용)
+# 사용 가능 변수: %name% (등록된 이름), %player% (마인크래프트 닉네임)
+chat-format: "§7[§f%name%§7] §f%message%"
+
+# TAB 플러그인 연동
+tab-plugin:
+  enabled: true
+  # TAB 탭 목록에서 표시될 이름 형식
+  # 사용 가능 변수: %name% (등록된 이름)
+  tab-name-format: "§a%name%"
+  # 미등록 플레이어 TAB 표시 형식
+  unregistered-format: "§c[미등록] §7%player%"
+
+# 메시지
+messages:
+  prefix: "§8[§b회원가입§8] §r"
+  register-success: "§a§l회원가입 완료! §f이름이 §e%name%§f 으로 설정되었습니다."
+  register-already: "§c이미 회원가입이 완료된 플레이어입니다. §7(/이름변경 으로 이름을 바꿀 수 있습니다)"
+  register-usage: "§c사용법: §f/회원가입 <이름>"
+  register-name-short: "§c이름이 너무 짧습니다. §72글자 이상 입력해주세요."
+  register-name-long: "§c이름이 너무 깁니다. §716글자 이하로 입력해주세요."
+  register-name-invalid: "§c이름에 사용할 수 없는 문자가 포함되어 있습니다."
+  register-name-taken: "§c이미 사용 중인 이름입니다. 다른 이름을 선택해주세요."
+  rename-success: "§a이름이 §e%name%§a 으로 변경되었습니다."
+  rename-not-registered: "§c회원가입을 먼저 해야 합니다. §7(/회원가입 <이름>)"
+  rename-usage: "§c사용법: §f/이름변경 <새이름>"
+  rename-same: "§c현재 이름과 동일합니다."
+  not-player: "§c플레이어만 사용 가능한 명령어입니다."
